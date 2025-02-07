@@ -11,7 +11,6 @@ class Payment(models.Model):
     def __str__(self):
         return self.booking_reference
 
-
 class Listing(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()
