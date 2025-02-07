@@ -2,6 +2,16 @@ from django.db import models
 
 # Create your models here.
 
+class Payment(models.Model):
+    booking_reference = models.CharField(max_length=100)
+    payment_status = models.CharField(max_length=20)
+    amount = models.DecimalField(max_digits=10, decimal_places=2)
+    transaction_id = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.booking_reference
+
+
 class Listing(models.Model):
     title = models.CharField(max_length=255)
     description = models.TextField()

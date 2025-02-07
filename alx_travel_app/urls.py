@@ -19,6 +19,7 @@ from django.urls import path, include
 from rest_framework import permissions
 from drf_yasg.views import get_schema_view
 from drf_yasg import openapi
+from alx_travel_app.listings.views import payment_success
 
 schema_view = get_schema_view(
     openapi.Info(
@@ -34,4 +35,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include('alx_travel_app.listings.urls')),
     path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('payment/success/', payment_success, name='payment_success'),
 ]
